@@ -7,25 +7,27 @@ generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function writePassword() {
 
-  var userLenChars = prompt("How many password characters between 8 to 128 do you want?");
-  var userLowerChars= confirm("Would you like to include lowercase characters?");
-  var userUpperChars= confirm("Would you like to include uppercase characters?");
-  var userNumericChars= confirm("Would you like to include numeric characters?");
-  var userSpecialChars= confirm("Would you like to include special characters?");
+  var password = generatePassword();
+    function generatePassword() {
+      var numbers = ["123456789"];
+      var lowercase = ["abcdefghijklmnopqrstuvwxyz"];
+      var uppercase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+      var special = ["!@#$%^&*()_+"];
 
-  var computerLenChars = 1;
-  var computerLowerChars = "abcdefghijklmnopqrstuvwxyz";
-  var computerUpperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var computerNumericChars = "123456789";
-  var computerSpecialChars = "!@#$%^&*()_+";
-
-
+      var userLenChars = prompt("How many password characters between 8 to 128 do you want?");
+      var userLowerChars= confirm("Would you like to include lowercase characters?");
+      var userUpperChars= confirm("Would you like to include uppercase characters?");
+      var userNumericChars= confirm("Would you like to include numeric characters?");
+      var userSpecialChars= confirm("Would you like to include special characters?");
+      
+      if (userLensChars <= 7) {
+        alert ("You must pick a number between 8 and 128!");
+      }
+      
+    }
   
-  var password = generatePassword(
-    
-  );
-  var passwordText = document.querySelector("#password");
+    var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+    passwordText.value = password;
 
 }
